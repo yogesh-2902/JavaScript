@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Click Events</title>
+    <style>
+        #redDiv {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border: 2px solid green;
+        }
+
+        .highlighted {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            border: 2px solid green;
+            color: white;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <div id="redDiv">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae recusandae fugiat voluptatibus ipsam quisquam
+        explicabo vitae, officiis similique blanditiis nostrum laborum dolor harum sunt officia aut ducimus consequuntur
+        odit ab.
+    </div>
+
+    <script>
+
+        function init() {
+
+            const redDiv = document.getElementById("redDiv");
+            // console.log(redDiv.textContent);
+
+            // redDiv.onmousemove = function (){
+            //     console.log("mouse is moving")
+            // }
+
+            // redDiv.onmouseenter = function() {
+            //     console.log("Entered red Div");
+            //     redDiv.setAttribute('class' , "highlighted");
+            // }
+
+            // redDiv.oncontextmenu = function() {
+            //     console.log("Right button clicked");
+            // }
+
+            // redDiv.onmouseleave = function() {
+            //     console.log("Left red Div");
+            //     redDiv.setAttribute("class" , "");
+            // }
+
+            //Whenever redDiv is clicked from mouse
+            // redDiv.onclick = function () {
+            //     console.log("Red Div has been clicked");
+            // }
+
+            //Wen redDiv is double clicked
+            redDiv.ondblclick = function () {
+                console.log("Has been clicked twice");
+            }
+
+            //We can provide event as argument in function to get more details about the click
+            document.onclick = function (event){
+                console.log("Entire body is clicked");
+                console.log(event);
+                console.log(event.clientX);
+                console.log(event.clientY);
+            }
+        }
+        window.onload = init;
+
+    </script>
+</body>
+
+</html>

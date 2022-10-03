@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methods of adding HTML</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+        <div id="redDiv">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor, accusantium!
+        </div>
+        <div id="redDiv" onclick="newClick(event)">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor, accusantium!
+        </div>
+        <div id="redDiv3">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor, accusantium!
+        </div>
+
+        <script>
+            window.onload = init;
+
+            //This is a function for inline onclick
+            function newClick(event){
+                console.log("This is using Inline HTML onclick");
+                console.log(event);
+            }
+
+            function init(){
+                const div2 = document.getElementById('redDiv');
+                console.log(div2.textContent);
+
+                //This is object property Method
+                div2.onclick = function(){
+                    console.log("Clicked red Div");
+                }
+
+                const redDiv3 = document.getElementById('redDiv3');
+                redDiv3.addEventListener('click', addEventListenerLog);
+
+                function addEventListenerLog(){
+                    console.log('This method is for add Event listener');
+                }
+            }
+        </script>
+</body>
+</html>

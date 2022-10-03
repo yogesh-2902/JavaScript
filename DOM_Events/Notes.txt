@@ -1,0 +1,32 @@
+//Update the notes when you re revise the topics
+
+//Mouse Events
+
+Three ways of wroking with events in JavaScript
+1.Inline attribute
+2.object property
+//The main difference between the 2 and 1 is we cannot add more than 2 event handler functions, if we add it will be overridden
+3.addEventListener()
+//Can attach mutltiple event handler functions
+//We can control capturing/bubbling
+
+    ->onclick = When element is clicked
+    ->ondblclick = When element is double clicked
+    ->onmouseenter = When mouse is entered the element
+    ->onmouseleave = When mouse has left the element
+    ->oncontextmenu =>  (This is right click) = When mouse is right clicked
+    ->onmousemove = When mouse is moved
+    ->onscroll -> When mouse is scrolled
+
+//Keyboard Events
+    ->onkeydown
+    ->onkeyup
+    ->onkeypressed
+
+//Form Events
+    -> onfocus
+    ->onblur
+    ->onsubmit
+    ->onreset
+
+    
