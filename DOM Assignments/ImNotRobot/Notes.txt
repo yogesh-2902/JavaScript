@@ -1,0 +1,4 @@
+There are 3 challenges in this problem
+1. Random order in array -> we can solve this by using permuatation
+2. Generating Images as per array order
+3. Handle the click listener

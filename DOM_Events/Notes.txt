@@ -29,4 +29,13 @@ Three ways of wroking with events in JavaScript
     ->onsubmit
     ->onreset
 
-    
+To get a random number between a specfic range
+Math.random() * 20
+Math.ceil(Math.random() * 20)   
+
+To get between a specific range for ex -20 to 20
+function(){
+	const random = Math.floor(Math.random() * 40);
+	const result = 20 - random;
+	return result;
+	} 

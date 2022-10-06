@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify User</title>
+
+    <style>
+
+        #images img{
+            width: 150px;
+            height: 150px;
+            margin: 10px;
+            border: 2px solid red;
+        }
+
+        .selected {
+            border: 2px solid green;
+        }
+
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <div id="app">
+
+        <h3>Please click on the identical tiles to verify that you are not a robot</h3>
+
+        <div id="images">
+        </div>
+
+        <div>
+            <!-- To be rendered after selection of 2 images -->
+            <button id="btn">Verify</button>
+
+            <!-- To be rendered after one or more images clicked -->
+            <button id="reset" onclick="reset()">Reset</button>
+        </div>
+
+    </div>
+
+    <script>
+        //This is array of images 
+        const images = [
+            "https://i.imgur.com/nRknG0u.png",
+            "https://i.imgur.com/YcbgpiW.png",
+            "https://i.imgur.com/UZl44Zg.png",
+            "https://i.imgur.com/oB84Hqr.png",
+            "https://i.imgur.com/Jur3D16.png"
+        ];
+
+        const SUCCESS_MESSAGE = "You are a human. Congratulations!";
+        const FAILED_MESSAGE = "We can't verify you as a human. You selected the non-identical tiles.";
+        //The below function is used to re arrange the numbers in an array in different order
+        /* [0,1,2,3,4,1];
+           [4,1,3,0,2,2];
+        */
+        function randomArrayPosition() {
+            const arr = new Array(5).fill(false);
+            const result = [];
+
+            let allItemsPicked = false;
+            while (!allItemsPicked) {
+                const random = Math.floor(Math.random() * 5);
+
+                if (!arr[random]) {
+                    result.push(random);
+                    arr[random] = true;
+                }
+
+                allItemsPicked = arr.every(item => item);
+            }
+
+            //Now pick a random number and push it at end
+            result.push(Math.floor(Math.random() * 5));
+
+            return result;
+
+        }
+
+        function init() {
+
+            const imagesDiv = document.getElementById("images");
+
+            //randomly render 6 images
+            const randomPosition = randomArrayPosition();
+
+            const selectedImages = [];
+
+            randomPosition.forEach((item) => {
+                const image = document.createElement("img");
+                image.setAttribute("src", images[item]);
+                image.setAttribute("data-ns-test", item + 1);
+                //add this property to remove error because of CROS
+                image.setAttribute("referrerPolicy", "no-referrer");
+                imagesDiv.appendChild(image);
+
+
+                image.onclick = function (){
+                    image.setAttribute("class", "selected");
+                    selectedImages.push(image);
+                }
+            })
+        }
+
+        window.onload = init;
+ 
+ </script>
+</body>
+
+</html>
