@@ -1,0 +1,19 @@
+Notes on Event Bubbling and Event Capture(This topic is very important in terms of interview for Front end Developer)
+
+-> Event Bubbling is a default behaviour (Refer to youtube for some reference)
+
+->Event Delegation - Its a way of utilizing Event Bubbling and prevent ourselves from attaching eventListeners to all child items 
+
+
+StopWatch Tasks
+1. Click on start event 
+2. update total seconds using SetInterval with duration of 1000ms or 1s
+3. Update text for sec and if limit is reached updated mm and similary for hh using total second variable
+        hours = totalSeconds / 3600;
+        minutes = totalSeconds / 60;
+        second = totalSeconds;
+
+        Example : totalSeconds = 4520 seconds to hh:mm:ss
+            hours = 4520/3600 => 1.319 => 1
+            minutes = (4520/60) % 60 => 15
+            second = 4520 % 60 => 20

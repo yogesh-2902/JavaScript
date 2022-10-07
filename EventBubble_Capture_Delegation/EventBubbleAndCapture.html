@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubble and Capture</title>
+    <style>
+        div{
+            padding: 30px;
+        }
+
+        #parent {
+            width: 250px;
+            height: 250px;
+            background-color: red;
+        }
+
+        #child{
+            width: 150px;
+            height: 150px;
+            background-color: green;
+        }
+
+        #grandChild{
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+        }
+    </style>
+
+
+</head>
+<body>
+    
+    <div id="parent">
+        <div id="child">
+            <div id="grandChild">
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        //In HTML we can skip the below line,but it is recommended to keep this
+        const parent = document.getElementById("parent");
+        const child = document.getElementById("child");
+        const grandChild = document.getElementById("grandChild");
+
+        parent.addEventListener('click', () => {
+            console.log("Parent is clicked!!!");
+        });
+
+        child.addEventListener('click', () => {
+            console.log("Child is clicked!!!");
+        });
+
+        grandChild.addEventListener('click', () => {
+            console.log("grand Child is clicked!!!");
+        },true);
+
+        //To stop event bubbling by stoppropogation
+        // grandChild.addEventListener('click', (event) => {
+        //     console.log("grand Child is clicked!!!");
+        //     event.stopPropagation();
+        // });
+    </script>
+</body>
+</html>
