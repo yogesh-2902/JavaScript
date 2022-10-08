@@ -1,0 +1,6 @@
+->Diff between Synchronus and Aysnchronous Java Script
+->Callback
+
+Some examples of Callbacks
+->setTimeout
+->setInterval
