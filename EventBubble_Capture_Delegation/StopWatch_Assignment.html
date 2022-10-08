@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stop Watch Assignment</title>
     <style>
-        div#app{
+        div#app {
             text-align: center;
         }
     </style>
@@ -22,13 +22,97 @@
         </h2>
 
         <div class="buttons">
-            <span><button id="start">Start</button></span>
-            <span><button id="stop">Stop</button></span>
-            <span><button id="pauseContinue">Pause</button></span>
+            <span><button id="start" onclick="start()">start</button></span>
+            <span><button id="stop" onclick="stop()" disabled="true">stop</button></span>
+            <span><button id="pauseContinue" onclick="pauseContinue()" disabled="true">pause</button></span>
         </div>
 
-
     </div>
+
+    <script>
+
+
+        let totalDeciSecond = 0;
+        let hoursElement, minutesElement, secondsElement;
+        let hours, minutes, seconds;
+        let startBtn, stopBtn, pauseContinueBtn;
+        let intervalId;
+        let isRunning = false;
+
+
+        function init() {
+            hoursElement = document.getElementById("hh");
+            minutesElement = document.getElementById("mm");
+            secondsElement = document.getElementById("ss");
+
+            startBtn = document.getElementById("start");
+            stopBtn = document.getElementById("stop");
+            pauseContinueBtn = document.getElementById("pauseContinue");
+
+        }
+
+
+        function start() {
+            intervalId = setInterval(function () {
+                isRunning = true;
+                totalDeciSecond++;
+                //When we start we have to update time as well with start and second increased
+                updateTime();
+            }, 100);
+
+            //Enable pause and stop button
+            pauseContinueBtn.disabled = false;
+            stopBtn.disabled = false;
+            //Disable start button
+            startBtn.disabled = true;
+        }
+
+        function updateTime() {
+            hours = Math.floor(totalDeciSecond / 36000);
+            minutes = Math.floor((totalDeciSecond / 600) % 60);
+            seconds = Math.round((totalDeciSecond / 10) % 60);
+
+            //Since the value is a number we are going to convert it into a string and use padStart which is a inbuilt property
+            hoursElement.textContent = hours.toString().padStart(2, '0');
+            minutesElement.textContent = minutes.toString().padStart(2, '0');
+            secondsElement.textContent = seconds.toString().padStart(2, '0');
+        }
+
+        function pauseContinue() {
+            //If stop watch running we need to pause , if paused we need to continue
+            if (isRunning) {
+                //pause the stop watch
+                clearInterval(intervalId);
+                isRunning = false;
+                pauseContinueBtn.textContent = "continue";
+            } else {
+                start();
+                isRunning = true;
+                pauseContinueBtn.textContent = "pause";
+            }
+        }
+
+        function stop() {
+            /* Steps
+            We need to clear interval ID
+            set isRunning to false;
+            Reset the elements to zero
+            */
+            clearInterval(intervalId);
+            isRunning = false;
+            totalDeciSecond = 0;
+            updateTime();
+
+            startBtn.disabled = false;
+            stopBtn.disabled = true;
+            pauseContinueBtn.disabled = true;
+
+        }
+
+        window.onload = init;
+
+
+    </script>
 
 
 </body>

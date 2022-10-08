@@ -1,9 +1,15 @@
 Notes on Event Bubbling and Event Capture(This topic is very important in terms of interview for Front end Developer)
 
+Note: To implement event bubble we have to use addEventListener
+
 -> Event Bubbling is a default behaviour (Refer to youtube for some reference)
+-> Event capture is vice versa of event bubblinh
 
 ->Event Delegation - Its a way of utilizing Event Bubbling and prevent ourselves from attaching eventListeners to all child items 
 
+syntax for bubbling -> for addEventListener(event-type, callback function , useCapture = true);
+
+syntax for eventCapture -> for addEventListener(event-type, callback function , useCapture = false);
 
 StopWatch Tasks
 1. Click on start event 
@@ -17,3 +23,24 @@ StopWatch Tasks
             hours = 4520/3600 => 1.319 => 1
             minutes = (4520/60) % 60 => 15
             second = 4520 % 60 => 20
+
+
+10 milliseconds = 1 centisecond
+10 centiseconds = 1 deciseconds
+10 deciseconds = 1 second
+10 seconds = 1 decasecond
+10 decaseconds = 1 hectosecond
+10 hectosecond = 1kilosecond
+kilo
+
+
+//Placement Criteria
+End of october for placement starts
+Every Monday who are eligible for placements students are pushed to placement team.
+20 Days left
+
+
+
+
+
+

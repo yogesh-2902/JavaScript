@@ -2,12 +2,14 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Delegation</title>
 </head>
+
 <body>
     <ul>
         <li>Item - 1</li>
@@ -38,7 +40,7 @@
         */
 
         const ul = document.querySelector("ul");
-        ul.onclick = function(event){
+        ul.onclick = function (event) {
             //Here target is a property which keeps the reference of the source(where the bubbling started)
             console.log(event.target.textContent);
         }
@@ -49,4 +51,5 @@
 
 
 </body>
+
 </html>
