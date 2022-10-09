@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random User Generator</title>
+</head>
+<body>
+    <div class="container">
+        <div id="personName">User Name</div>
+        <div><img src="" id="personImage" alt="Image not found!!!"></div>
+        <div>
+            <button id="phoneButton" onclick="showPhone()" data-attr="phone">Phone</button>
+            <button id="emailButton" onclick="showEmail()" data-attr="email">Email</button>
+            <button id="ageButton" onclick="showAge()" data-attr="age">Age</button>
+        </div>
+        
+        <div id="additionalInfo">Additional Info</div>
+
+        <div>
+            <button id="getUser" onclick="loadNewUser()">Load New User</button>
+        </div>
+
+    </div>
+
+
+
+
+    <script>
+        /*
+        1.get user data -> using fetch 
+        2. Show full name -> first name + last name
+        3. Show Image -> large one
+        4. 3 buttons -> age , email and phone
+            age button clicked(data-attr) -> show age
+            email button -> show email
+            phone button -> show phone
+        5. Section part -> shows additional info -> These are all empty at first
+        6. Another user on clicking get another user
+        */
+        let currentUser;
+        let personName,personImage;
+
+        function loadNewUser() {
+            fetch('https://randomuser.me/api/')
+                .then((response) => response.json())
+                .then((data) => {
+                    currentUser = data.results[0];
+                    console.log(currentUser);
+
+                    personName.innerText = currentUser.name.first + " " + currentUser.name.last;
+                    console.log(personName.innerText);
+                    personImage.src = currentUser.picture.large;
+                })
+        }
+
+        //show age
+        function showAge(){
+            additionalInfo.innerText = currentUser.dob.age;
+        }
+
+        //show phone Number
+        function showPhone(){
+            additionalInfo.innerText = currentUser.phone;
+        }
+
+        function showEmail(){
+            additionalInfo.innerText = currentUser.email;
+        }
+
+
+        function init() {
+            //Get a new user
+            loadNewUser();
+                personName = document.getElementById("personName");
+                personImage = document.getElementById("personImage");
+                additionalInfo = document.getElementById("additionalInfo");
+
+
+
+        }
+
+        window.onload =  init;
+    </script>
+    
+</body>
+</html>

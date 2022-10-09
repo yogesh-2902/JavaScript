@@ -8,6 +8,12 @@ Some examples of Callbacks
 
 -> Promise because to avoid callback hell
 
+-> Async await
+-> JSON
+
+parsing is converting one data type into another
+
+
 
 
 What is the output ? Trick Question
@@ -116,4 +122,4 @@ promise.then((value) => {
          and when finally is executed there is no a value so we get o/p as undefined.
 
 
-
+    JSON

@@ -14,3 +14,19 @@ boilMilk(5, (milk) => {
 
 
 //Promise version of the same problem
+function boilMilk(milk) {
+    const promise = new Promise((resolve, reject) => {
+
+        setTimeout(() => {
+            console.log(`${milk} litres of milk has been boiled`);
+            resolve()
+        }, 3000);
+    });
+
+    return promise;
+}
+
+boilMilk(10).then(() => {
+    console.log("Ready to make coffee!!!");
+});
+
