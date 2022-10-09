@@ -2,31 +2,34 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Async Problem</title>
 </head>
+
 <body>
-        <button onclick="printRandomNumber()">Give random Number</button>
-        <script>
-            let printRandomNumber = () => {
-                console.log(Math.random());
+    <button onclick="printRandomNumber()">Give random Number</button>
+    <script>
+        let printRandomNumber = () => {
+            console.log(Math.random());
+        }
+
+        let sum = 0;
+        function init() {
+            console.log("Page Loaded");
+            for (let i = 0; i < 500000000; i++) {
+                sum = sum + i;
             }
 
-            let sum = 0;
-            function init(){
-                console.log("Page Loaded");
-                for(let i =0; i<500000000; i++){
-                    sum = sum + i;
-                }
-
-                console.log("Function has ended!!!");
-            }
+            console.log("Function has ended!!!");
+        }
 
 
-            window.onload = init;
-        </script>
+        window.onload = init;
+    </script>
 </body>
+
 </html>

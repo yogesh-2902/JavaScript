@@ -1,6 +1,119 @@
 ->Diff between Synchronus and Aysnchronous Java Script
 ->Callback
+->Callback Hell
 
 Some examples of Callbacks
 ->setTimeout
 ->setInterval
+
+-> Promise because to avoid callback hell
+
+
+
+What is the output ? Trick Question
+
+const promise = new Promise((a,b) => {
+    b(30);
+    a(25);
+});
+
+promise.then(
+    (response) => {
+        console.log(response);
+    },
+    (response) => {
+        console.log(response);
+    }
+
+);
+
+Ans. 30 , because it will only function so it will send first which is b and hence it is reject case and hence we are getting output as 30
+
+
+Try Catch and Async await
+syntax
+try{
+
+}catch(error){
+    //error prone code
+}
+
+//Trick Question
+//What is the output?
+try{
+    const a = 23;
+    a += a;
+    console.log(a);
+
+}catch(error){
+    console.log(a);
+}
+
+Ans. Undefined 
+-> Because of const and let being block scoped
+
+//Trick Question
+//What is the output?
+const a = 10;
+try{
+    console.log(a);
+    a += 2;
+    console.log(a);
+}catch(error){
+    console.log(a);
+}
+
+console.log(a);
+
+Ans . 10 10 10
+Note: Once the error is obtained in try the later code will not be executed.until then all the code inside the try block will be executed 
+
+//Trick Question
+//What is the output?
+let str = "a";
+try{
+    console.log(str);
+    st.concat("b");
+}catch(error){
+    console.log(a);
+    str = str.concat("c");
+}
+finally{
+    str += "d";
+}
+
+console.log(str);
+
+Ans. a a acd
+
+//Trick Question
+//What is the output and explain?
+
+const promise = new Promise((a) => {
+    a(10);
+});
+
+promise.then((value) => {
+    console.log(value * 10);
+    })
+    .then((value) => {
+        console.log(value * 10);
+    })
+    .catch((error) => {
+    console.log(a);
+    })
+    .finally(() => {
+        console.log(a);
+    });
+
+    Ans. 100
+         NAN
+         Undefined
+
+
+         Explanation->Herethe Tricky part is the first then which will not return anything hence when we move to the next then we have 'value' as undefined hence second output is NAN.
+
+         and when finally is executed there is no a value so we get o/p as undefined.
+
+
+

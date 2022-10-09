@@ -12,7 +12,7 @@ Pending
 
 //Creation of Promise
 
-const firstPromise = new Promise((resolve , reject) => {
+const firstPromise = new Promise((resolve, reject) => {
     //Write the code for time consuming task here
 
     //If task is successful we call resolve
@@ -28,8 +28,8 @@ firstPromise.then(
         console.log("First callback " + response);
     },
     //if reject was called we use this
-    (response) =>{
+    (response) => {
         console.log("Second Response " + response);
-    })
+    });
 
 
