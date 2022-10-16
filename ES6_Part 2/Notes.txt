@@ -1,0 +1,96 @@
+Topics
+
+->Getters and Setters
+
+-> Classes
+    -static class
+    -inheritance
+
+
+//Guess the output
+
+const Obj = {
+    get prop(){
+        return 10;
+    },
+
+    set prop(value){
+       // this.prop = value;
+    }
+}
+
+console.log(Obj.prop);
+Obj.prop = 20;
+console.log(Obj.prop);
+
+Ans. 10 
+    Maximum call stack size exceeded
+
+//Guess the output
+
+    const Obj = {
+    get prop(){
+        return 10;
+    },
+
+    set prop(value){
+        this._prop = value;
+    }
+}
+
+console.log(Obj.prop);
+Obj.prop = 20;
+console.log(Obj.prop);
+
+Ans. 10 
+     10
+
+//Guess the output
+
+const Obj = {
+    _prop: 10,
+    
+    get prop(){
+        return this._prop;
+    },
+
+    set prop(value){
+        this._prop = value;
+    }
+}
+
+console.log(Obj.prop);
+Obj.prop = 20;
+console.log(Obj.prop);
+
+
+Ans. 10 
+     20
+
+//Inheritance
+
+//Guess the output
+
+     let num = 10;
+
+class A {
+    constructor(){
+        num += 10;
+    }
+}
+
+class B extends A{
+    constructor(){
+       super();
+        num += 10;
+    }
+}
+
+const a = new A();
+console.log(num);
+
+const b = new B();
+console.log(num);
+
+Ans: 20
+     40

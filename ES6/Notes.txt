@@ -1,0 +1,88 @@
+ES6 Notes
+
+Best Reference -> http://es6-features.org/#ExpressionBodies
+
+Creator -> Brendan Eich
+Ecma(Europe Computer Manufacture Association) Script -> ES6 in 2015 
+After ES6 they started with yearly release
+Currently -> ES13
+
+New Features
+1. Introduction of 'let' and 'const'
+2. Block Scope
+3. Arrow Functions
+4. Default parameters for functions(even when no argument is provided to function when executed.)
+5. Rest Operator which is used to provide as arguments inside a function
+6. Spread Operator
+7. for-in and for-of loops
+7. Destructuring of arrays and objects
+
+
+//ways to iterate over key of objects and get values of objects
+1. Object.keys() -> returns all the properties of the objects as an array
+2. Object.entries() => returns all the keys value pairs in the object as an array
+3. for-in loop to iterate over keys of object.
+
+
+
+Note: 'in' is a keyword used which returns boolean value
+Ex: const obj = {a:1, b:2};
+
+console.log(a in obj); //true
+
+
+//Guess Output and explain
+
+const obj1 = {a:1, b:2};
+const obj2 = {...obj1, d:4};b
+
+for(const key in obj2){
+    console.log(obj2[key]); //This means we need obj2 values based on key and we used this method when we have for-of or for-in loop which is used instead of console.log(obj2.key) which returns undefined
+}
+
+Ans: 1,2,4
+
+//Guess Output and explain (TRICK QUESTION)
+
+const arr = [{a:1},{b:2},{c:3}];
+const item = [...arr][2];
+
+console.log(item);
+
+for (const item of arr) {
+    console.log(item['a']);
+}
+
+Ans: {c:3}
+     1 undefined undefined
+
+
+//Guess Output and explain (TRICK QUESTION)
+let a;
+const b = 2;
+const c = 3;
+console.log({a,b,c});
+
+A:{a:undefined , b : 2, c:3} Property shorthand concept 
+
+
+//Guess Output and explain (TRICK QUESTION)
+const {c} = {a:1,b:2,c:3};
+console.log(c**2);
+
+A: 9 //Concept of Object Destructuring
+
+
+//Guess Output and explain
+
+const arr = ["a","b","c"];
+const obj = {a:1, b:2,c:3};
+
+const [a0,a1,a2] = arr;
+const {a,b,c} = obj;
+
+console.log(a0.repeat(a));
+console.log(a1.repeat(b));
+console.log(a2.repeat(c));
+
+A: a bb ccc
