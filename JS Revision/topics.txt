@@ -1,0 +1,10 @@
+Topics 
+The topics covered are which have been revised.And Important from Interview point of view
+
+1.Function declaratoion vs Function Expression vs Arrow Function
+
+2. JS Hoisting
+
+3. Closure.
+
+4. OOPS
