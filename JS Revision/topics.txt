@@ -8,3 +8,14 @@ The topics covered are which have been revised.And Important from Interview poin
 3. Closure.
 
 4. OOPS
+
+Why do we specify <!DOCTYPE html> and is it required?
+No it is not required. But when we dont provide the DOCTYPE some browsers will enable quirks mode. But when we specify we tell the browser to follow a set of rules to follow to get a proper view of the image.
+<!DOCTYPE html>
+This also means html latest version
+
+Declarative Programming -> Using map,reduce,filter, some etc
+Imperative Programming -> while, forloop ....
+
+Function Call / Invocation  => calling the function
+Declaration Call / Declaration => Creating the function

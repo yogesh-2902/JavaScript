@@ -30,3 +30,15 @@ const obj2 = {...obj1 , id:20, location:"Bangalore", phone : 12345};
 //Here we see override id 1 by id 20 because both have the same keys.
 console.log(obj2);
 
+
+
+// REST OPERATOR
+// VERY IMPORTANT : In a function declaration we use REST operator
+// Here 3,4,5,6 will be passed as an array inside sum
+const sum = (a,b,...rest) => {
+    console.log(rest);
+    return a+b;
+}
+
+const result = sum(1,2,3,4,5,6);
+console.log(result);
