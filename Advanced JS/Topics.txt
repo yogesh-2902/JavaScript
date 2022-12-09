@@ -1,0 +1,64 @@
+//This folder covers topics which are mostly asked in interviews
+
+Pending Topics and Revision Topics covered in Newton School
+    -> lexical scoping of this keyword
+
+method chaining
+JS Currying
+IIFE -> Syntax (function() {})();
+
+Lexical Scoping of 'this' keyword
+//Guess the output
+
+let num = 10;
+const obj = {
+    add : () => ++this.num
+}
+
+console.log(obj.add());
+
+// Ans: NAN
+//     because ++ on undefined is NAN
+
+//Guess the output
+
+var num2  = 10;
+const obj2 = {
+    add : function(){
+        return ++this.num;
+    }
+}
+
+console.log(obj2.add());
+
+// Ans. NAN
+//     because we are using a normal function it is finding in object itself and which is does in default always and since there is no num variable in obj2 we get ++undefined so we get NAN
+
+
+IIFE
+//Guess the output
+const a = 40;
+(function(a){
+    console.log(a);
+})(20);
+
+Ans. 20
+
+//Guess the output
+let b = (function(a){
+    return a;
+})(20);
+
+console.log(b);
+
+Ans. 20
+
+
+//Guess the output
+let c= (function(a){
+    return {a};
+})(20);
+
+console.log(c);
+
+Ans. { a: 20 }

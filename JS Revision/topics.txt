@@ -19,3 +19,9 @@ Imperative Programming -> while, forloop ....
 
 Function Call / Invocation  => calling the function
 Declaration Call / Declaration => Creating the function
+
+What is event delegation? 
+Providing a task or function to its subordinates or others is called event delegation
+
+Arrows Functions -> Very Important Link
+https://medium.com/@gracet37/arrow-function-return-rules-4bab63961b92

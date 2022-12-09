@@ -1,0 +1,66 @@
+{
+    "results": [
+        {
+            "gender": "male",
+            "name": {
+                "title": "Mr",
+                "first": "Francisco de Sales",
+                "last": "da Mota"
+            },
+            "location": {
+                "street": {
+                    "number": 1411,
+                    "name": "Rua Maranhão "
+                },
+                "city": "Jandira",
+                "state": "Rondônia",
+                "country": "Brazil",
+                "postcode": 95838,
+                "coordinates": {
+                    "latitude": "-76.4151",
+                    "longitude": "-48.2577"
+                },
+                "timezone": {
+                    "offset": "+9:00",
+                    "description": "Tokyo, Seoul, Osaka, Sapporo, Yakutsk"
+                }
+            },
+            "email": "franciscodesales.damota@example.com",
+            "login": {
+                "uuid": "64d267cf-841d-49f5-8ba4-b5d198567211",
+                "username": "purplefish747",
+                "password": "postman",
+                "salt": "FtfYK7wI",
+                "md5": "185ec6a4abf036ed45a71269b5987d11",
+                "sha1": "627c1e3e7f3bc0154507730df385cd2b39937d04",
+                "sha256": "49b6e04ae132ed40a55f99f499d9f697ec3fa6f103a70822509c43a8d7a37ba2"
+            },
+            "dob": {
+                "date": "1963-11-22T09:22:59.059Z",
+                "age": 59
+            },
+            "registered": {
+                "date": "2018-12-09T19:42:36.730Z",
+                "age": 3
+            },
+            "phone": "(55) 3441-1156",
+            "cell": "(20) 5629-4345",
+            "id": {
+                "name": "CPF",
+                "value": "339.578.756-41"
+            },
+            "picture": {
+                "large": "https://randomuser.me/api/portraits/men/9.jpg",
+                "medium": "https://randomuser.me/api/portraits/med/men/9.jpg",
+                "thumbnail": "https://randomuser.me/api/portraits/thumb/men/9.jpg"
+            },
+            "nat": "BR"
+        }
+    ],
+    "info": {
+        "seed": "ef1187948b5d68c0",
+        "results": 1,
+        "page": 1,
+        "version": "1.4"
+    }
+}

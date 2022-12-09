@@ -1,0 +1,15 @@
+*{
+    padding: 10px;
+}
+
+.grand-parent{
+    background-color: red;
+}
+
+.parent{
+    background-color: yellow;
+}
+
+.child{
+    background-color: blue;
+}

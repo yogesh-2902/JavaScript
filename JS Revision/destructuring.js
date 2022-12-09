@@ -23,4 +23,4 @@ const [name, age, profession] = user;
 
 //If we want specific values
 const [newUser,  , newProfession] = user;
-console.log()
+console.log();
