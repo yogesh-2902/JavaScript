@@ -25,3 +25,5 @@ Providing a task or function to its subordinates or others is called event deleg
 
 Arrows Functions -> Very Important Link
 https://medium.com/@gracet37/arrow-function-return-rules-4bab63961b92
+
+Debouncing and Throtting
