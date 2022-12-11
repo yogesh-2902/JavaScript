@@ -61,3 +61,12 @@ person.prototype.sleep = function () {
 const yogesh = person("Yogesh J", 23);
 const sadsadsad =new person("Yogesh J", 23);
 console.log("Yogesh object is ", yogesh);
+
+
+
+
+const parent = {id : 1 , location : "Hyderabad"};
+const child = {};
+
+console.log(child.__proto__);
+console.log(parent.isPrototypeOf(child));
