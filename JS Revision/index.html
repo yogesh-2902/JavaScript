@@ -8,12 +8,15 @@
     <!-- 1. Downloaad the script file -  -->
     <!-- 2. Execute the script file -->
     <!-- async can be used when we want to load ads since we dont need dom to be loaded completely, meaning a seperate thread will be created to 'download' the script file-->
-    <script async src="./console.js"></script>
+    <!-- <script async src="./console.js"></script> -->
     <!-- defer means 'download' all the html and then 'execute' after the html has been loaded and it runs in the same order of execution-->
     <!-- ALWAYS USE THIS -->
-    <script  src="./destructuring.js" defer ></script>
+    <!-- <script  src="./destructuring.js" defer ></script> -->
+    <!-- <script  src="./polyfills.js" defer ></script> -->
+    <script  src="./setTimeout-and- setInterval.js" defer ></script>
 </head>
 <body>
+    <button onclick='alertMe("Yogesh", "KA")'>Cick Me!</button>
     <!-- If we want to add the script tag at the top we have to add defer -->
 </body>
 </html>

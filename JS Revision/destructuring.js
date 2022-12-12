@@ -9,12 +9,10 @@ const object = {
 // const role = object.role;
 
 //Using destructuring
-// here place is just renaming locatiob 
+// here place is just renaming location
 const { id , role , location : place = "Hyderabad"} = object;
 
 console.log({id, role, place});
-
-
 
 
 const user = ["Yogesh J", 23, "Developer"];
